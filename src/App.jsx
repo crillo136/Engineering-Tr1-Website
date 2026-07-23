@@ -23,14 +23,17 @@ function App() {
     if (!isNaN(number1) && !isNaN(number2) && operator == "+") {
       setNumber1(number1 + number2)
       setNumber2(NaN)
+      setOperator("")
     }
     if (!isNaN(number1) && !isNaN(number2) && operator == "-") {
       setNumber1(number1 - number2)
       setNumber2(NaN)
+      setOperator("")
     }
     if (!isNaN(number1) && !isNaN(number2) && operator == "*") {
       setNumber1(number1 * number2)
       setNumber2(NaN)
+      setOperator("")
     }
     if (!isNaN(number1) && !isNaN(number2) && operator == "/") {
       if (number2 === 0) {
@@ -44,20 +47,32 @@ function App() {
         // Perform normal division
         setNumber1(number1 / number2)
         setNumber2(NaN)
+        setOperator("")
       }
 }
   }
 
-  let reset = () => {
+let reset = () => {
   setNumber1(NaN)
   setNumber2(NaN)
   setOperator("")
 }
 
+let display = ""
+if (!isNaN(number1)) {
+  display = number1
+}
+if (operator != "") {
+  display = display + " " + operator
+}
+if (!isNaN(number2)) {
+  display = display + " " + number2
+}
+
   return (
     <>
-      <h1>Calculator</h1>
-      <h2>{number1 + " " + number2} </h2>
+      <h1>Calculate Your One Digits</h1>
+      <h2>{display}</h2>
       <div className="main-grid">
       <div className="numbers-grid">
         <button onClick={() => {foo(9)}}>9</button>
@@ -71,13 +86,13 @@ function App() {
         <button onClick={() => {foo(1)}}>1</ button>
         <button onClick={() => {foo(0)}}>0</ button>
         <button onClick={(operate)}>=</button>
+        <button onClick={reset}>C</button>
       </div>
       <div className="operators-grid">
         <button onClick={() => {setOperator("+")}}>+</button>
         <button onClick={() => {setOperator("-")}}>-</button>
         <button onClick={() => {setOperator("*")}}>*</button>
         <button onClick={() => {setOperator("/")}}>/</button>
-        <button onClick={reset}>C</button>
       </div>
       </div>
     </>

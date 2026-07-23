@@ -191,12 +191,22 @@
 
 .numbers-grid {
   display: grid;
-  grid-template-columns: 30px 30px 30px;
+  grid-template-columns: 60px 60px 60px;
   gap: 5px;
 }
 
 .operators-grid{
   display: grid;
-  grid-template-columns: 30px 30px 30px;
+  grid-template-columns: 95px 90px;
   gap: 5px;
+}
+.numbers-grid button{
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+}
+.operators-grid button {
+  width: 90px;
+  height: 60px;
+  font-size: 20px;
 }
