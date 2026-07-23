@@ -10,13 +10,21 @@ function App() {
   const [number2, setNumber2] = useState(NaN)
   const [operator, setOperator] = useState("")
   let foo = (number) => {
-    if (isNaN(number1)){
-      setNumber1(number)
-    } else if (isNaN(number2)){
-      setNumber2(number)
+    if (operator === "") {
+      // If no operator is selected yet, build number1
+      if (isNaN(number1)) {
+        setNumber1(number)
+      } else {
+        // Convert to strings to stick them together (e.g., "5" + "3" = "53"), then convert back to Number
+        setNumber1(Number(String(number1) + number))
+      }
     } else {
-      setNumber1(number)
-      setNumber2(NaN)
+      // An operator was selected, so build number2
+      if (isNaN(number2)) {
+        setNumber2(number)
+      } else {
+        setNumber2(Number(String(number2) + number))
+      }
     }
   }
   let operate = () =>{
