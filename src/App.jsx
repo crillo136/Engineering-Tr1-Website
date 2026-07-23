@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
 
 
@@ -77,9 +75,10 @@ if (!isNaN(number2)) {
   display = display + " " + number2
 }
 
+
   return (
     <>
-      <h1>Calculate Your One Digits</h1>
+      <h1>-Calculate Your Digits-</h1>
       <h2>{display}</h2>
       <div className="main-grid">
       <div className="numbers-grid">
