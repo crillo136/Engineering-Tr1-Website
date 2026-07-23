@@ -185,6 +185,8 @@
 
 .main-grid {
   display: grid;
+  justify-content: center;
+  gap: 10px;
 }
 
 .numbers-grid {
@@ -195,6 +197,6 @@
 
 .operators-grid{
   display: grid;
-  grid-template-columns: 30px;
+  grid-template-columns: 30px 30px 30px;
   gap: 5px;
 }
