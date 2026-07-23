@@ -32,6 +32,20 @@ function App() {
       setNumber1(number1 * number2)
       setNumber2(NaN)
     }
+    if (!isNaN(number1) && !isNaN(number2) && operator == "/") {
+      if (number2 === 0) {
+        // Intercept division by zero!
+        alert("Cannot divide by zero! Result is undefined.")
+        setNumber1(NaN)
+        setNumber2(NaN)
+        setOperator("")
+      } 
+      else {
+        // Perform normal division
+        setNumber1(number1 / number2)
+        setNumber2(NaN)
+      }
+}
   }
 
   return (
@@ -58,7 +72,7 @@ function App() {
         <button onClick={() => {setOperator("+")}}>+</button>
         <button onClick={() => {setOperator("-")}}>-</button>
         <button onClick={() => {setOperator("*")}}>*</button>
-        <button>/</button>
+        <button onClick={() => {setOperator("/")}}>/</button>
       </div>
       </div>
     </>
