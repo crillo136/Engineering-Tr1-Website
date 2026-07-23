@@ -1,120 +1,60 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import kanye from './assets/kanye.jpg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
+
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [number1, setNumber1] = useState(NaN)
+  const [number2, setNumber2] = useState(NaN)
+  const [operator, setOperator] = useState("")
+  let foo = (number) => {
+    if (isNaN(number1)){
+      setNumber1(number)
+    } else if (isNaN(number2)){
+      setNumber2(number)
+    } else {
+      setNumber1(number)
+      setNumber2(NaN)
+    }
+  }
+  let operate = () =>{
+    if (!isNaN(number1) && !isNaN(number2) && operator == "+") {
+      setNumber1(number1 + number2)
+      setNumber2(NaN)
+    }
+  }
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      
+      <img src={kanye} className="base" width="170" height="179" alt="" />
+      <h1>Calculator</h1>
+      <h2>{number1 + " " + number2} </h2>
+      <div className="main-grid">
+      <div className="numbers-grid">
+        <button onClick={() => {foo(9)}}>9</button>
+        <button onClick={() => {foo(8)}}>8</button>
+        <button onClick={() => {foo(7)}}>7</ button>
+        <button onClick={() => {foo(6)}}>6</ button>
+        <button onClick={() => {foo(5)}}>5</ button>
+        <button onClick={() => {foo(4)}}>4</ button>
+        <button onClick={() => {foo(3)}}>3</ button>
+        <button onClick={() => {foo(2)}}>2</ button>
+        <button onClick={() => {foo(1)}}>1</ button>
+        <button onClick={() => {foo(0)}}>0</ button>
+        <button onClick={(operate)}>=</button>
+      </div>
+      <div className="operators-grid">
+        <button onClick={() => {setOperator("+")}}>+</button>
+        <button>-</button>
+        <button>/</button>
+        <button>*</button>
+      </div>
+      </div>
     </>
   )
 }
