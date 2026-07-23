@@ -24,8 +24,6 @@ function App() {
       setNumber1(number1 + number2)
       setNumber2(NaN)
     }
-  }
-  let operate = () =>{
     if (!isNaN(number1) && !isNaN(number2) && operator == "-") {
       setNumber1(number1 - number2)
       setNumber2(NaN)
@@ -54,7 +52,7 @@ function App() {
       </div>
       <div className="operators-grid">
         <button onClick={() => {setOperator("+")}}>+</button>
-        <button>-</button>
+        <button onClick={() => {setOperator("-")}}>-</button>
         <button>/</button>
         <button>*</button>
       </div>
