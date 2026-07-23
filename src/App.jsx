@@ -25,6 +25,12 @@ function App() {
       setNumber2(NaN)
     }
   }
+  let operate = () =>{
+    if (!isNaN(number1) && !isNaN(number2) && operator == "-") {
+      setNumber1(number1 - number2)
+      setNumber2(NaN)
+    }
+  }
 
   return (
     <>
