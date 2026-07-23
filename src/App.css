@@ -1,6 +1,6 @@
 .counter {
-  font-size: 16px;
-  padding: 5px 10px;
+  font-size: 50px;
+  padding: 100px 10px;
   border-radius: 5px;
   color: var(--accent);
   background: var(--accent-bg);
@@ -181,4 +181,18 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: 33% 33% 33%
+}
+.operators-grid{
+  display: grid;
+  grid-template-columns: 100%
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 80% 20%
 }
