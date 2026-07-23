@@ -183,16 +183,18 @@
   }
 }
 
-.numbers-grid {
-  display: grid;
-  grid-template-columns: 33% 33% 33%
-}
-.operators-grid{
-  display: grid;
-  grid-template-columns: 100%
-}
-
 .main-grid {
   display: grid;
-  grid-template-columns: 80% 20%
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
+  gap: 5px;
+}
+
+.operators-grid{
+  display: grid;
+  grid-template-columns: 30px;
+  gap: 5px;
 }
