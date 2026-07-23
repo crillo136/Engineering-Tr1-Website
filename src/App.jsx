@@ -50,8 +50,6 @@ function App() {
 
   return (
     <>
-      
-      <img src={heroImg} className="base" width="170" height="179" alt="" />
       <h1>Calculator</h1>
       <h2>{number1 + " " + number2} </h2>
       <div className="main-grid">
