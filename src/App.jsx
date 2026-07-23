@@ -48,6 +48,12 @@ function App() {
 }
   }
 
+  let reset = () => {
+  setNumber1(NaN)
+  setNumber2(NaN)
+  setOperator("")
+}
+
   return (
     <>
       <h1>Calculator</h1>
@@ -71,6 +77,7 @@ function App() {
         <button onClick={() => {setOperator("-")}}>-</button>
         <button onClick={() => {setOperator("*")}}>*</button>
         <button onClick={() => {setOperator("/")}}>/</button>
+        <button onClick={reset}>C</button>
       </div>
       </div>
     </>
