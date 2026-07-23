@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import kanye from './assets/kanye.jpg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-
 
 
 function App() {
@@ -31,7 +29,7 @@ function App() {
   return (
     <>
       
-      <img src={kanye} className="base" width="170" height="179" alt="" />
+      <img src={heroImg} className="base" width="170" height="179" alt="" />
       <h1>Calculator</h1>
       <h2>{number1 + " " + number2} </h2>
       <div className="main-grid">
